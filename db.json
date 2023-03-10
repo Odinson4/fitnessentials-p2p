@@ -901,6 +901,42 @@
         }
       ],
       "id": "feFTXhA"
+    },
+    {
+      "name": "Jackeed UP",
+      "exercises": [
+        {
+          "name": "barbell bench press",
+          "sets": 3,
+          "reps": 100
+        },
+        {
+          "name": "barbell front raise and pullover",
+          "sets": 3,
+          "reps": 100
+        },
+        {
+          "name": "dumbbell incline alternate press",
+          "sets": 3,
+          "reps": 100
+        },
+        {
+          "name": "wide grip pull-up",
+          "sets": 3,
+          "reps": 100
+        },
+        {
+          "name": "weighted pull-up",
+          "sets": 3,
+          "reps": 100
+        },
+        {
+          "name": "barbell seated overhead press",
+          "sets": 3,
+          "reps": 101
+        }
+      ],
+      "id": "BGxL-rL"
     }
   ],
   "calendar": [
@@ -953,6 +989,11 @@
       "date": "2023-03-27T06:00:00.000Z",
       "name": "Presto Change-o",
       "id": 10
+    },
+    {
+      "date": "2023-03-12T07:00:00.000Z",
+      "name": "Jackeed UP",
+      "id": 11
     }
   ]
 }

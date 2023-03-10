@@ -4,9 +4,14 @@ body {
 }
 
 span {
-  align-items: center;
   font-family: 'Raleway', sans-serif;
   font-size: 34px;
-  padding-left: 14vh;
-  padding-top: 10px;
+}
+
+.title {
+  position: absolute;
+  width: 10vw;
+
+  padding: 5px 10px;
+  margin: 15px 20px;
 }
