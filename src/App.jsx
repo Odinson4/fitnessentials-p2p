@@ -42,6 +42,7 @@ export default function App() {
             Workout List
           </Button>
         </NavLink>
+        <span>FITNESSENTIALS</span>
       </nav>
 
       <Routes>

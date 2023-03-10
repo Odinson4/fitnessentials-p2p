@@ -1,3 +1,8 @@
+.exerciselist {
+  background-size: contain;
+  position: absolute;
+}
+
 /* Form */
 .workout-form {
   background-color: #333;
@@ -12,6 +17,7 @@
 }
 
 .workout-form label {
+  font-size: 22px;
   display: block;
   margin: 10px;
 }

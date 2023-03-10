@@ -2,3 +2,11 @@ body {
   background-color: #5b8ad6;
   font-family: 'Roboto', sans-serif;
 }
+
+span {
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 34px;
+  padding-left: 14vh;
+  padding-top: 10px;
+}

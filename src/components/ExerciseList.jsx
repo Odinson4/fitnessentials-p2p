@@ -26,7 +26,7 @@ export default function ExerciseList({ exercises }) {
   });
 
   return (
-    <div>
+    <div className='exerciselist'>
       <div>
         <WorkoutForm
           selectedExercise={selectedExercise}

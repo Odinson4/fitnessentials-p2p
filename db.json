@@ -865,6 +865,42 @@
         }
       ],
       "id": "jJ9vtni"
+    },
+    {
+      "name": "Tricky Nikki",
+      "exercises": [
+        {
+          "name": "semi squat jump (male)",
+          "sets": 10,
+          "reps": 100
+        },
+        {
+          "name": "star jump (male)",
+          "sets": 10,
+          "reps": 100
+        },
+        {
+          "name": "jump rope",
+          "sets": 10,
+          "reps": 100
+        },
+        {
+          "name": "mountain climber",
+          "sets": 10,
+          "reps": 100
+        },
+        {
+          "name": "skater hops",
+          "sets": 10,
+          "reps": 100
+        },
+        {
+          "name": "walking on stepmill",
+          "sets": 10,
+          "reps": 100
+        }
+      ],
+      "id": "feFTXhA"
     }
   ],
   "calendar": [
@@ -877,6 +913,46 @@
       "date": "2023-03-08T07:00:00.000Z",
       "name": "Abby's Day Off",
       "id": 2
+    },
+    {
+      "date": "2023-03-07T07:00:00.000Z",
+      "name": "Tricky Nikki",
+      "id": 3
+    },
+    {
+      "date": "2023-03-19T06:00:00.000Z",
+      "name": "T-rex Seth",
+      "id": 4
+    },
+    {
+      "date": "2023-03-24T06:00:00.000Z",
+      "name": "Dave's Dumplings",
+      "id": 5
+    },
+    {
+      "date": "2023-03-25T06:00:00.000Z",
+      "name": "Gauged Up",
+      "id": 6
+    },
+    {
+      "date": "2023-03-05T07:00:00.000Z",
+      "name": "Troy's Breakfast",
+      "id": 7
+    },
+    {
+      "date": "2023-03-17T06:00:00.000Z",
+      "name": "Grandaddy Purp",
+      "id": 8
+    },
+    {
+      "date": "2023-03-21T06:00:00.000Z",
+      "name": "Mike mike mike mike mike",
+      "id": 9
+    },
+    {
+      "date": "2023-03-27T06:00:00.000Z",
+      "name": "Presto Change-o",
+      "id": 10
     }
   ]
 }
