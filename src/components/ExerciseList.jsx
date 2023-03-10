@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import WorkoutForm from './WorkoutForm';
+import Button from "@mui/material/Button";
+import '../ExerciseList.css'
 // import Workout from "./Workout";
 
 export default function ExerciseList({ exercises }) {
@@ -28,7 +30,6 @@ export default function ExerciseList({ exercises }) {
       <div>
         <WorkoutForm
           selectedExercise={selectedExercise}
-        // addExerciseToForm={addExerciseToForm}
         />
         <div>
           <label>Filter by:</label>
@@ -51,18 +52,30 @@ export default function ExerciseList({ exercises }) {
           </select>
         </div>
       </div>
-      {filteredExercises.map(({ id, name, bodyPart, target, gifUrl }) => (
-        <div key={id}>
-          <h4>{name.toUpperCase()}</h4>
-          <img src={gifUrl} alt={name} />
-          <p>Bodypart: {bodyPart.toUpperCase()} | Target: {target.toUpperCase()}</p>
-          {/* Add a button to add the exercise to the workout form */}
-          <button onClick={() => {
-            setSelectedExercise({ id, name, sets: 3, reps: 10 });
-            // handleAddExercise();
-          }}>Add to Workout</button>
-        </div>
-      ))}
+      <div className='box' >
+
+        {filteredExercises?.map(({ id, name, bodyPart, target, gifUrl }) => (
+          <div key={id}>
+            <div className='card' >
+              <img src={gifUrl} alt={name} />
+              <div>
+                <h4>{name.toUpperCase()}</h4>
+                <p>
+                  Bodypart: {bodyPart.toUpperCase()}
+                  <br />
+                  Target: {target.toUpperCase()}
+                  <br />
+                </p>
+                <div className='button'>
+                  <Button size='large' onClick={() => {
+                    setSelectedExercise({ id, name, sets: 3, reps: 10 });
+                  }}>Add to Workout</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

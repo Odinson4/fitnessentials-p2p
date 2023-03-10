@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 
+
 export default function WorkoutForm({ selectedExercise, onSubmit }) {
   const [exercises, setExercises] = useState([]);
   const [workoutName, setWorkoutName] = useState('');
 
-  const addExercise = () => {
+  function addExercise() {
     setExercises([...exercises, selectedExercise]);
   };
 
-  const removeExercise = (id) => {
+  function removeExercise(id) {
     setExercises(exercises.filter((exercise) => exercise.id !== id));
   };
 
-  const updateExercise = (id, field, value) => {
+  function updateExercise(id, field, value) {
     setExercises(
       exercises.map((exercise) => {
         if (exercise.id === id) {
@@ -23,7 +24,7 @@ export default function WorkoutForm({ selectedExercise, onSubmit }) {
     );
   };
 
-  const handleNameChange = (event) => {
+  function handleNameChange(event) {
     setWorkoutName(event.target.value);
   };
 
@@ -56,7 +57,7 @@ export default function WorkoutForm({ selectedExercise, onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="workout-form" onSubmit={handleSubmit}>
       <label>
         Workout Name:
         <input type="text" value={workoutName} onChange={handleNameChange} />

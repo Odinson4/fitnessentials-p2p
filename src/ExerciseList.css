@@ -1,0 +1,191 @@
+/* Form */
+.workout-form {
+  background-color: #333;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px;
+  width: 800px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.workout-form label {
+  display: block;
+  margin: 10px;
+}
+
+.workout-form input[type="text"],
+.workout-form input[type="number"] {
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.workout-form input[type="text"] {
+  width: 300px;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.workout-form h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.workout-form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #fff;
+}
+
+.workout-form li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: #fff;
+}
+
+.workout-form li div {
+  margin-bottom: 10px;
+}
+
+.workout-form li label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.workout-form button {
+  background-color: #5b8ad6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.workout-form button:hover {
+  background-color: #3e5d8e;
+}
+
+/* Form */
+
+/* filter/sort buttons */
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+label {
+  margin: 10px;
+}
+
+button {
+  margin: 16px;
+}
+
+/* filter/sort buttons */
+
+
+/* Card STYLING */
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  height: 500px;
+  margin: 20px 25px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #eee, #fff);
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card h4 {
+  margin-top: 15px;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 400;
+  border-radius: 5px;
+  color: #333;
+}
+
+.card img {
+  height: 200px;
+  max-width: 250px;
+  vertical-align: middle;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.card button {
+  background-color: #5b8ad6;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  margin-left: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card button:hover {
+  background-color: #3e5d8e;
+}
+
+/* Card STYLING */
+
+
+/* Navbar STYLING */
+
+.navbar {
+  position: relative;
+  top: 0;
+  background: #333;
+  color: #fff;
+  /* overflow: auto; */
+  height: 80px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar button {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 15px 20px;
+  background-color: #5b8ad6;
+
+}
+
+.navbar button:hover {
+  background-color: #3e5d8e;
+}

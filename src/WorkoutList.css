@@ -1,0 +1,84 @@
+.workout-list h2 {
+  width: auto;
+  font-size: 32px;
+  color: #5b8ad6;
+  background-color: #333;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.workout-list {
+  margin: auto;
+  text-align: center;
+}
+
+.workout {
+  display: inline-block;
+  width: 400px;
+  height: auto;
+  vertical-align: top;
+  margin: 10px;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  list-style: none;
+}
+
+.workout h3 {
+  display: flex;
+  width: fit-content;
+  padding: 5px 15px;
+  margin-left: 5px;
+  margin-right: 10px;
+  flex-direction: row;
+  text-align: start;
+  font-size: 28px;
+  color: #fff;
+  background-color: #5b8ad6;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.exercise {
+  position: relative;
+  list-style: none;
+  margin-left: -20px;
+}
+
+.name {
+  text-align: start;
+  width: 95%;
+  color: #333;
+  background-color: #5b8ad6;
+  border-radius: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px;
+  margin-left: -10px;
+  margin-bottom: 15px;
+  /* margin: 10px; */
+
+}
+
+button {
+  font-size: larger;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sets,
+.reps {
+  margin: 0px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}

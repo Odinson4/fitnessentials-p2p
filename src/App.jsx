@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ExerciseList from './components/ExerciseList';
-import WorkoutForm from './components/WorkoutForm';
+import Button from "@mui/material/Button";
 import Home from './components/Home';
 import WorkoutList from './components/WorkoutList';
 import './index.css';
@@ -24,21 +24,23 @@ export default function App() {
 
   return (
     <div>
-      <nav>
+      <nav className='navbar'>
         <NavLink to="/" className="active-link">
-          Home
+          <Button>
+            Home
+          </Button>
         </NavLink>
 
         <NavLink to="/exerciselist" className="active-link">
-          Exercise List
+          <Button>
+            Exercise List
+          </Button>
         </NavLink>
 
         <NavLink to="/workoutlist" className="active-link">
-          Workout List
-        </NavLink>
-
-        <NavLink to="/workoutform" className="active-link">
-          Create Workout
+          <Button>
+            Workout List
+          </Button>
         </NavLink>
       </nav>
 
@@ -48,8 +50,6 @@ export default function App() {
         <Route exact path="/exerciselist" element={<ExerciseList exercises={exercises} setExercises={setExercises} />} />
 
         <Route exact path="/workoutlist" element={<WorkoutList workouts={workouts} exercises={exercises} />} />
-
-        <Route exact path="/workoutform" element={<WorkoutForm exercises={exercises} setExercises={setExercises} />} />
       </Routes>
     </div>
   );

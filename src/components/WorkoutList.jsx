@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { MdFitnessCenter } from "react-icons/md";
+import { BsTrash3Fill } from "react-icons/bs";
+import "../WorkoutList.css";
 
 function WorkoutList() {
   const [workouts, setWorkouts] = useState([]);
@@ -22,22 +25,34 @@ function WorkoutList() {
   };
 
   return (
-    <div>
-      <h2>Workouts</h2>
+    <div className="workout-list">
+      <h2>My Workouts</h2>
       <ul>
-        {workouts.map((workout) => (
-          <li key={workout.id}>
-            <h3>{workout.name}</h3>
+        {workouts?.map((workout) => (
+          <li key={workout.id} className="workout">
+            <h3>
+              <MdFitnessCenter className="icon" />
+              {workout.name}
+            </h3>
             <ul>
-              {workout.exercises.map((exercise) => (
-                <li key={exercise.name}>
-                  <p>{exercise.name.toUpperCase()}</p>
-                  <p>Sets: {exercise.sets}</p>
-                  <p>Reps: {exercise.reps}</p>
+              {workout.exercises?.map((exercise) => (
+                <li key={exercise.name} className="exercise">
+                  <div className="name">
+
+                    <h4>{exercise.name.toUpperCase()}</h4>
+                    <p className="sets">
+                      Sets:  {exercise.sets}
+                    </p>
+                    <br />
+                    <p className="reps">
+                      Reps: {exercise.reps}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
-            <button onClick={() => handleDeleteWorkout(workout)}>Delete</button>
+            <button onClick={() => handleDeleteWorkout(workout)}>
+              <BsTrash3Fill className="icon" /></button>
           </li>
         ))}
       </ul>

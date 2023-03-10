@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import '../Home.css'
 
 export default function Home() {
   const [value, onChange] = useState(new Date());
   const [workouts, setWorkouts] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [calendar, setCalendar] = useState([]);
+  const [selectedWorkout, setSelectedWorkout] = useState(null);
 
 
   useEffect(() => {
@@ -14,8 +16,17 @@ export default function Home() {
       .then((data) => setWorkouts(data));
   }, []);
 
-  const handleTileClick = (date) => {
+
+  useEffect(() => {
+    fetch("http://localhost:3000/calendar")
+      .then((response) => response.json())
+      .then((data) => setCalendar(data));
+  }, []);
+
+
+  const handleTileClick = (date, workout) => {
     setSelectedDate(date);
+    setSelectedWorkout(workout);
   };
 
 
@@ -42,25 +53,46 @@ export default function Home() {
         date: selectedDate,
         name: selectedWorkout.name,
       };
-      setWorkouts([...workouts, newWorkout]);
+      fetch("http://localhost:3000/calendar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newWorkout),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setCalendar([...calendar, data]);
+        });
     }
 
     setSelectedDate(null);
   };
 
 
+  const handleDeleteWorkout = (id) => {
+    fetch(`http://localhost:3000/calendar/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => {
+        const updatedWorkouts = calendar.filter((w) => w.id !== id);
+        setCalendar(updatedWorkouts);
+      })
+  };
+
+
 
   const tileContent = ({ date, view }) => {
     const dateKey = date.toLocaleDateString();
-    const dateWorkouts = workouts.filter((workout) => new Date(workout.date).toLocaleDateString() === dateKey);
-    console.log(dateWorkouts)
+    const dateWorkouts = calendar.filter((workout) => new Date(workout.date).toLocaleDateString() === dateKey);
+
     if (view === "month") {
       if (selectedDate && selectedDate.toLocaleDateString() === dateKey) {
         const availableWorkouts = workouts.filter((workout) => new Date(workout.date).toLocaleDateString() !== dateKey);
         return (
           <div>
-            {availableWorkouts.map((workout) => (
-              <div>
+            {availableWorkouts?.map((workout) => (
+              <div key={workout.id}>
                 <div>{workout.name}</div>
                 <button onClick={() => handleAddWorkout(workout)}>Add</button>
               </div>
@@ -71,26 +103,34 @@ export default function Home() {
         if (dateWorkouts.length > 0) {
           return (
             <div>
-              {dateWorkouts.map((workout) => (
-                <div>
+              {dateWorkouts?.map((workout) => (
+                <div key={workout.id}>
                   <div>{workout.name}</div>
-                  <button onClick={() => handleTileClick(date)}>Edit</button>
+                  <button onClick={() => handleTileClick(date, workout)}>Edit</button>
+                  <button onClick={() => handleDeleteWorkout(workout.id)}>Delete</button>
                 </div>
               ))}
             </div>
           );
         } else {
           return (
-            <button onClick={() => handleTileClick(date)}>+</button>
+            <button onClick={() => handleTileClick(date, null)}>+</button>
           );
         }
       }
+    } else {
+      return null;
     }
   };
 
+
+
   return (
-    <div>
-      <Calendar onChange={onChange} value={value} tileContent={tileContent} />
-    </div>
+    <body className='home'>
+      <div >
+        <Calendar onChange={onChange} value={value} tileContent={tileContent} />
+      </div>
+    </body>
+
   );
 };
