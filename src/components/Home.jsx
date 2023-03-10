@@ -32,11 +32,11 @@ export default function Home() {
 
   const handleAddWorkout = (selectedWorkout) => {
     const dateKey = selectedDate.toLocaleDateString();
-    const existingWorkout = workouts.find((workout) => new Date(workout.date).toLocaleDateString() === dateKey);
+    const existingWorkout = calendar.find((workout) => new Date(workout.date).toLocaleDateString() === dateKey);
 
     if (existingWorkout) {
       // Update existing workout
-      const updatedWorkouts = workouts.map((workout) => {
+      const updatedWorkouts = calendar.map((workout) => {
         if (workout === existingWorkout) {
           return {
             ...workout,
@@ -46,7 +46,7 @@ export default function Home() {
           return workout;
         }
       });
-      setWorkouts(updatedWorkouts);
+      setCalendar(updatedWorkouts);
     } else {
       // Add new workout
       const newWorkout = {
@@ -68,6 +68,7 @@ export default function Home() {
 
     setSelectedDate(null);
   };
+
 
 
   const handleDeleteWorkout = (id) => {

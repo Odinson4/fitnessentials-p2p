@@ -1,5 +1,5 @@
 .workout-list h2 {
-  width: auto;
+  width: 100vw;
   font-size: 32px;
   color: #5b8ad6;
   background-color: #333;
@@ -9,6 +9,9 @@
 .workout-list {
   margin: auto;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .workout {
@@ -17,7 +20,7 @@
   height: auto;
   vertical-align: top;
   margin: 10px;
-  padding: 5px;
+  padding: 10px;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
